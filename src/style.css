@@ -1,0 +1,410 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url(/src/assets/img/background-hero-section-smk-inovasi-digital-manado.avif)
+    no-repeat center;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.img-jurusan {
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+.bi-lightbulb:hover {
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+.bi-people:hover {
+  color: #00bfff;
+  transition: color 0.3s ease;
+}
+
+.bi-bullseye:hover {
+  color: #32cd32;
+  transition: color 0.3s ease;
+}
+
+.bi-award:hover {
+  color: #e4a11b;
+  transition: color 0.3s ease;
+}
+
+.bi-buildings:hover {
+  color: #3071a9;
+  transition: color 0.3s ease;
+}
+
+.bi-people-alumni:hover {
+  color: #146c43;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 1199px) {
+  .card-text {
+    text-align: start;
+  }
+}
+
+.img-bg-shadow {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.2) 80%
+  );
+}
+
+.news-text {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1024px) {
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card {
+    transition: transform 0.3s;
+  }
+}
+
+.carousel-control-prev-icon {
+  background-color: #007bff;
+  border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+  background-color: #007bff;
+  border-radius: 50%;
+  color: #32cd32;
+}
+
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.social-icons a {
+  font-size: 1.25rem;
+}
+
+.rounded-circle {
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
+}
+
+
+/* Navbar */
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar {
+  background-color: #fff;
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus,
+.button-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.link-nav {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .nav-link:hover,
+  .nav-link.active {
+    color: #000;
+  }
+
+  .link-nav::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #2074d3;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .link-nav:hover::before,
+  .link-nav.active::before {
+    width: 100%;
+    visibility: visible;
+    color: #2074d3;
+  }
+
+  .link-nav-dropdown::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #2074d3;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .link-nav-dropdown:hover::before,
+  .link-nav-dropdown.active::before {
+    width: 50%;
+    visibility: visible;
+    color: #2074d3;
+  }
+}
+
+.link-nav-dropdown {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.testimonial-card {
+  max-width: 600px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0d6efd;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-section-pages.container {
+  margin-top: 9rem;
+}
+
+.img-news {
+  height: 17rem;
+  object-fit: cover;
+}
+
+.icon-facebook:hover {
+  color: white !important;
+}
+
+.icon-instagram:hover {
+  color: white !important;
+}
+
+.hero-sections-kegiatan .container {
+  margin-top: 5rem;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-section-profil {
+  position: relative;
+  height: 100vh;
+  background: url(/src/assets/img/haidan-OZOq5gH0Oi4-unsplash.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-section-profil::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero-section-profil .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .logo-sekolah {
+    width: 60% !important;
+  }
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.bi-lightbulb:hover {
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+.bi-people:hover {
+  color: #00bfff;
+  transition: color 0.3s ease;
+}
+
+.bi-bullseye:hover {
+  color: #32cd32;
+  transition: color 0.3s ease;
+}
+
+.img-fasilitas {
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+.img-rpl {
+  height: 25.5rem;
+  object-fit: cover;
+}
+
+.img-bg-shadow {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.2) 80%
+  );
+}
+
+@media (min-width: 1024px) {
+  .scale-up:hover {
+    transform: scale(1.05);
+  }
+
+  .scale-up {
+    transition: transform 0.3s;
+  }
+}
+
+.text-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+.hero-section-profil {
+  min-height: 100vh;
+  padding-top: 200px; /* sesuaikan tinggi navbar */
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+              url('@/assets/img/haidan-OZOq5gH0Oi4-unsplash.jpg') center/cover no-repeat;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scale-up {
+  transform: scale(0.9);
+  transition: all 0.8s ease;
+}
+
+.animate-init {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animate-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animate-scale {
+  transform: scale(0.9);
+}
