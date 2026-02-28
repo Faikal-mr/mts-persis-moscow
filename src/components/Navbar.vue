@@ -11,13 +11,13 @@ const menus = [
 <template>
 <nav data-sal="slide-down" data-sal-duration="900" class="navbar navbar-expand-lg fixed-top shadow-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">
-            <img class="img" 
-            :src="logoSekolah"
-            alt="Logo Sekolah" 
-            width="auto" 
-            height="40">
-          </a>
+        <router-link class="navbar-brand" to="/home">
+          <img 
+        :src="logoSekolah"
+        alt="Logo Sekolah"
+          height="40"
+           >
+          </router-link>
           
         <button
           class="navbar-toggler pe-0"
