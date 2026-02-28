@@ -8,7 +8,7 @@ import DetailBerita from '@/views/DetailBerita.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: Home,
     meta: {

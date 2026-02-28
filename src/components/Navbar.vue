@@ -2,7 +2,7 @@
 import logoSekolah from '../assets/img/logo-sekolah-tut-wuri-handayani.avif'
 
 const menus = [
-  { name: "Beranda", link: "/home" },
+  { name: "Beranda", link: "/" },
   { name: "Profil Sekolah", link: "/profil" },
   { name: "Berita", link: "/berita" }
 ]
