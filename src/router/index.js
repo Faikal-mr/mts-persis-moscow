@@ -8,7 +8,7 @@ import DetailBerita from '@/views/DetailBerita.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home,
     meta: {
@@ -47,7 +47,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/mts-persis-moscow/'),
   routes,
   scrollBehavior(){
     return{top: 0}
