@@ -25,7 +25,7 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url(/src/assets/img/background-hero-section-smk-inovasi-digital-manado-CtXJSHT9.avif)
+  background: url(/src/assets/img/bg1.avif)
     no-repeat center;
   background-size: cover;
   width: 100%;
@@ -279,7 +279,7 @@ body {
 .hero-section-profil {
   position: relative;
   height: 100vh;
-  background: url(/src/assets/img/haidan-OZOq5gH0Oi4-unsplash.jpg) no-repeat center;
+  background: url(/src/assets/img/bg3.avif) no-repeat center;
   background-size: cover;
   width: 100%;
   overflow: hidden;
@@ -365,7 +365,7 @@ body {
   min-height: 100vh;
   padding-top: 200px; /* sesuaikan tinggi navbar */
   background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-              url('../src/assets/img/haidan-OZOq5gH0Oi4-unsplash-CFRh5CXj.jpg') center/cover no-repeat;
+              url('/src/assets/img/bg3.avif') center/cover no-repeat;
 }
 
 .animate-on-scroll {
