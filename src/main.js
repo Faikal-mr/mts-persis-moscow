@@ -11,10 +11,17 @@ import sal from 'sal.js'
 import 'sal.js/dist/sal.css'
 import animate from './directives/animate'
 
+// 🔁 Tangkap redirect dari 404.html
+const params = new URLSearchParams(window.location.search)
+const redirect = params.get('redirect')
+
+if (redirect) {
+  window.history.replaceState(null, null, redirect)
+}
+
 const app = createApp(App)
 
 app.directive('animate', animate)
-createApp(App)
-.use(router)
-.mount('#app')
+app.use(router)
+app.mount('#app')
 sal()

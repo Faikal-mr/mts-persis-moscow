@@ -1,30 +1,17 @@
-<!doctype html>
-<html lang="id">
-  <head>
-    <html lang="id">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Redirecting...</title>
+  <script>
+    const base = "/mts-persis-moscow/";
+    const path = window.location.pathname.replace(base, "");
+    const query = window.location.search;
+    const hash = window.location.hash;
 
-<title>MTs Persis Tokyo</title>
-
-<meta name="description" content="Website resmi SMK Inovasi Digital Manado." />
-<meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#0055A4" />
-
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="MTs Persis Tokyo" />
-<meta property="og:locale" content="id_ID" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-
-<link rel="icon" href="/favicon.ico" />
+    const redirectUrl = base + "?redirect=/" + path + query + hash;
+    window.location.replace(redirectUrl);
+  </script>
 </head>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<body></body>
 </html>
