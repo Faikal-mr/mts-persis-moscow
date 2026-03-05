@@ -66,8 +66,8 @@ const formatTanggal = (tanggal) => {
   </div> -->
 <div class="container py-5">
   <div class="text-center mb-4">
-    <h2 class="text-uppercase mb-3 fw-bold">berita terbaru</h2>
-    <router-link :to="`/`"class="btn btn-outline-dark text-capitalize mb-4 mb-md-3">berita lainnya </router-link>
+    <h2 class="text-uppercase mb-3 fw-bold section-title">berita terbaru</h2>
+    <div><router-link :to="`/`"class="btn btn-outline-dark text-capitalize mb-4 mb-md-3">berita lainnya </router-link></div>
   </div>
 
   <div class="row g-3">

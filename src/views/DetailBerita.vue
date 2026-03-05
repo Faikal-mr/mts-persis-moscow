@@ -50,100 +50,105 @@ onBeforeRouteUpdate((to) => {
 </script>
 
 <template>
-  <section v-if="!loading && berita" class="hero-sections-kegiatan py-5">
+  <section v-if="!loading && berita" class="news-detail-section py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
-          <!-- Hero Image -->
+          <!-- HERO IMAGE -->
           <img
             v-if="berita.gambar"
             :src="berita.gambar"
-            class="img-fluid rounded mb-4 hero-img"
+            class="img-fluid rounded-4 mb-4 news-hero-img"
             :alt="berita.judul"
           />
 
-          <!-- Judul -->
-          <h1 class="display-5 fw-bold mt-3">
+          <!-- JUDUL -->
+          <h1 class="news-title-detail mt-3">
             {{ berita.judul }}
           </h1>
 
-          <!-- Meta Info -->
-          <div class="d-flex flex-wrap text-muted mb-4 meta-info">
+          <!-- META -->
+          <div class="meta-info mb-4">
 
-            <div class="me-3 d-flex align-items-center">
-              <i class="bi bi-calendar-event me-2"></i>
-              <small>{{ formatTanggal(berita.created_at) }}</small>
+            <div class="meta-item">
+              <i class="bi bi-calendar-event"></i>
+              <span>{{ formatTanggal(berita.created_at) }}</span>
             </div>
 
-            <div class="me-3 d-flex align-items-center">
-              <i class="bi bi-person me-2"></i>
-              <small>
+            <div class="meta-item">
+              <i class="bi bi-person"></i>
+              <span>
                 Oleh <strong>{{ berita.penulis || 'Admin' }}</strong>
-              </small>
+              </span>
             </div>
 
-            <div class="me-3 d-flex align-items-center">
-              <i class="bi bi-tag me-2"></i>
-              <small>{{ berita.kategori || 'Berita' }}</small>
+            <div class="meta-item">
+              <i class="bi bi-tag"></i>
+              <span>{{ berita.kategori || 'Berita' }}</span>
             </div>
 
           </div>
 
-          <!-- Isi Artikel -->
-          <article class="article-content" v-html="berita.isi"></article>
+          <!-- ISI ARTIKEL -->
+          <article
+            class="article-content"
+            v-html="berita.isi">
+          </article>
 
-          <!-- Footer Artikel -->
-          <div class="mt-5 border-top pt-4">
+          <!-- FOOTER -->
+          <div class="news-footer mt-5 pt-4">
 
-            <!-- Tag -->
-            <div class="mb-3">
+            <!-- TAG -->
+            <div class="mb-4">
               <span
                 v-for="(tag, index) in berita.tags?.split(',')"
                 :key="index"
-                class="badge bg-primary me-2"
+                class="custom-badge me-2"
               >
                 {{ tag }}
               </span>
             </div>
 
-            <!-- Tombol Kembali -->
-            <div class="pb-3">
+            <!-- BACK BUTTON -->
+            <div class="mb-4">
               <button
                 @click="router.push('/berita')"
-                class="btn btn-outline-secondary btn-sm"
+                class="btn btn-outline-theme btn-sm"
               >
                 <i class="bi bi-arrow-left me-1"></i>
                 Kembali ke Berita
               </button>
             </div>
 
-            <!-- Share Button -->
-            <div class="mb-3">
-              <small class="text-muted me-2">Bagikan:</small>
+            <!-- SHARE -->
+            <div>
+              <small class="me-2 text-muted">Bagikan:</small>
 
-              <a href="#" class="btn btn-outline-primary btn-sm me-1">
+              <button class="btn btn-share btn-sm me-2">
                 <i class="bi bi-facebook"></i>
-              </a>
+              </button>
 
-              <a href="#" class="btn btn-outline-primary btn-sm me-1">
+              <button class="btn btn-share btn-sm me-2">
                 <i class="bi bi-instagram"></i>
-              </a>
+              </button>
 
-              <a href="#" class="btn btn-outline-primary btn-sm me-1">
+              <button class="btn btn-share btn-sm me-2">
                 <i class="bi bi-twitter-x"></i>
-              </a>
+              </button>
 
-              <a href="#" class="btn btn-outline-primary btn-sm">
+              <button class="btn btn-share btn-sm">
                 <i class="bi bi-link-45deg"></i>
-              </a>
+              </button>
             </div>
 
           </div>
 
-          <!-- Related Post -->
-          <div class="pb-5 mt-5">
-            <h5 class="mb-4">Berita Terkait</h5>
+          <!-- RELATED -->
+          <div class="related-section mt-5">
+            <h5 class="related-title mb-4">
+              Berita Terkait
+            </h5>
 
             <div class="row">
               <div
@@ -151,26 +156,28 @@ onBeforeRouteUpdate((to) => {
                 :key="item.id"
                 class="col-md-4"
               >
-                <div class="card border-0 mb-4 related-card">
+                <div class="card related-card border-0 mb-4">
                   <router-link
                     :to="`/berita/${item.slug}`"
-                    class="text-decoration-none text-dark"
+                    class="text-decoration-none"
                   >
                     <img
                       :src="item.gambar"
-                      class="card-img-top img-news"
+                      class="card-img-top img-news rounded-3"
                       :alt="item.judul"
                     />
-                    <div class="card-body ps-0">
-                      <h6 class="card-title">
+
+                    <div class="card-body px-0">
+                      <h6 class="related-post-title">
                         {{ item.judul }}
                       </h6>
 
-                      <p class="text-muted small">
+                      <p class="related-meta small">
                         <i class="bi bi-calendar-event me-2"></i>
                         {{ formatTanggal(item.created_at) }}
                       </p>
                     </div>
+
                   </router-link>
                 </div>
               </div>
@@ -187,34 +194,3 @@ onBeforeRouteUpdate((to) => {
     Loading...
   </div>
 </template>
-
-<style scoped>
-.hero-img {
-  max-height: 450px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.meta-info small {
-  font-size: 0.9rem;
-}
-
-.article-content {
-  font-size: 1.05rem;
-  line-height: 1.9;
-}
-
-.article-content p {
-  margin-bottom: 1.2rem;
-}
-
-.related-card img {
-  height: 180px;
-  object-fit: cover;
-}
-
-.related-card h6 {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-</style>

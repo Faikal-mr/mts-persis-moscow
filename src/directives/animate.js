@@ -1,20 +1,19 @@
-const animate = {
-  mounted(el, binding) {
-    const animation = binding.value || 'fade-up'
+export default {
+  mounted(el) {
+    el.classList.add('fade-up-init')
 
-    el.classList.add('animate-init')
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          el.classList.add(`animate-${animation}`)
-          observer.unobserve(el)
-        }
-      })
-    }, { threshold: 0.2 })
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.add('fade-up-active')
+            observer.unobserve(el)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
 
     observer.observe(el)
   }
 }
-
-export default animate

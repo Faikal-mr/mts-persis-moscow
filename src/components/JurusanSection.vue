@@ -40,44 +40,48 @@ onMounted(async () => {
 </script>
 
 <template>
- <section class="py-5 ">
-        <div class="container">
-          <h2 class="text-center mb-4 fw-semibold">JURUSAN UNGGULAN
+  <section class="py-5 jurusan-section">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold section-title">
+        JURUSAN UNGGULAN
+      </h2>
 
-          </h2>
+      <div class="row">
+        <div 
+          class="col-md-4 pt-2"
+          v-for="jurusan in jurusans"
+          :key="jurusan.nama"
+        >
+          <div 
+            data-sal="slide-up"
+            class="card jurusan-card h-100 border-0"
+          >
+            <img
+              :src="jurusan.gambar"
+              class="card-img-top img-jurusan"
+              loading="lazy"
+            />
 
+            <div class="card-body">
+              <h5 class="card-title text-capitalize jurusan-title">
+                {{ jurusan.nama }}
+              </h5>
 
-          <div class="row">
+              <p class="card-text text-capitalize jurusan-text">
+                {{ jurusan.deskripsi }}
+              </p>
 
-            <div 
-            class="col-md-4 pt-2"
-            v-for="jurusan in jurusans"
-            :key="jurusan.nama"
-            >
-
-              <div data-sal="slide-up" class="card h-100">
-                <!-- <img src="/src/assets/img/jurusan-rpl.avif" loading="lazy" alt="jurusan-rpl" class="card-img-top img-jurusan"> -->
-                 <img
-                 :src="jurusan.gambar"
-                 class="card-img-top img-jurusan"
-                 loading="lazy"
-                 />
-                <div class="card-body">
-                  <h5 class="card-title text-capitalize">{{ jurusan.nama }}</h5>
-                  <p class="card-text text-capitalize">{{ jurusan.deskripsi }}</p>
-                  <router-link
-                  :to="jurusan.link"
-                  class="icon-link gap-1 icon-link-hover stretched-link link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
-                    baca selengkapnya
-                    <i class="bi bi-chevron-right"></i>
-                  </router-link>
-                </div>
-              </div>
+              <router-link
+                :to="jurusan.link"
+                class="jurusan-link"
+              >
+                baca selengkapnya
+                <i class="bi bi-chevron-right"></i>
+              </router-link>
             </div>
-
-           
           </div>
         </div>
-       </section>
-
+      </div>
+    </div>
+  </section>
 </template>

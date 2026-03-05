@@ -23,13 +23,18 @@ onMounted(() => {
 </script>
 
 <template>
-<section id="Fasilitas-Sekolah" class="py-5">
+<section id="Fasilitas-Sekolah" class="py-5 fasilitas-section">
   <div class="container">
-    <h2 class="text-center mb-3">Fasilitas Sekolah</h2>
 
-    <div id="carouselExampleFade"
-         class="carousel slide carousel-fade carousel-dark"
-         data-bs-ride="carousel">
+    <h2 class="section-title text-center mb-5">
+      Fasilitas Sekolah
+    </h2>
+
+    <div
+      id="carouselExampleFade"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
 
       <div class="carousel-inner">
 
@@ -38,15 +43,16 @@ onMounted(() => {
           :key="item.id"
           :class="['carousel-item', { active: index === 0 }]"
         >
-          <div class="card mx-auto text-white" style="max-width: 600px;">
-            
+          <div class="card fasilitas-card mx-auto">
+
             <img
               :src="item.gambar"
-              class="card-img img-rpl"
+              class="card-img"
               :alt="item.nama"
             />
 
-            <div class="card-img-overlay d-flex flex-column justify-content-end img-bg-shadow">
+            <div class="card-img-overlay fasilitas-overlay d-flex flex-column justify-content-end">
+
               <h5 class="card-title">
                 <i :class="['bi', item.icon, 'me-2']"></i>
                 {{ item.nama }}
@@ -55,6 +61,7 @@ onMounted(() => {
               <p class="card-text mb-3">
                 {{ item.deskripsi }}
               </p>
+
             </div>
 
           </div>
@@ -63,18 +70,22 @@ onMounted(() => {
       </div>
 
       <!-- BUTTON -->
-      <button class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleFade"
-              data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon custom-carousel-icon"></span>
       </button>
 
-      <button class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleFade"
-              data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon custom-carousel-icon"></span>
       </button>
 
     </div>

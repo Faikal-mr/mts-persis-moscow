@@ -4,10 +4,10 @@ import sal from 'sal.js'
 import VisiMisi from '@/components/VisiMisi.vue'
 import KontakSekolah from '@/components/KontakSekolah.vue'
 import FasilitasCarousel from '@/components/FasilitasCarousel.vue'
-import logoSekolah from '@/assets/img/logo-sekolah-tut-wuri-handayani.avif'
+import logoSekolah from '@/assets/img/logo-baru-ummi.avif'
 
 const profil = {
-  judul: "Profil SMK Inovasi Digital Manado",
+  judul: "Profil UMMI SDIT IBNU TAIMIYAH",
   sejarah: `
     Sekolah Menengah Kejuruan (SMK) Inovasi Digital Manado didirikan pada
     tahun 2018 dengan tujuan memberikan pendidikan kejuruan yang
@@ -47,41 +47,43 @@ onMounted(() => {
     </section>
 
     <!-- PROFIL -->
-    <section id="profil" class="py-5">
-      <div class="container">
-        <div class="row align-items-center">
+    <section id="profil" class="py-5 profil-section">
+  <div class="container">
+    <div class="row align-items-center">
 
-          <!-- TEXT -->
-          <div class="col-md-8 order-2 order-md-1">
-            <h2 data-sal="slide-up" class="text-uppercase">
-              Sejarah Sekolah
-            </h2>
-            <p data-sal="slide-up" class="text-justify">
-              {{ profil.sejarah }}
-            </p>
+      <!-- TEXT -->
+      <div class="col-md-8 order-2 order-md-1">
+        <h2 data-sal="slide-up" class="section-title text-uppercase">
+          Sejarah Sekolah
+        </h2>
 
-            <h5 data-sal="slide-up" class="text-uppercase mt-4">
-              Arti Logo Sekolah
-            </h5>
-            <p data-sal="slide-up" class="text-justify">
-              {{ profil.artiLogo }}
-            </p>
-          </div>
+        <p data-sal="slide-up" class="profil-text">
+          {{ profil.sejarah }}
+        </p>
 
-          <!-- IMAGE -->
-          <div class="col-md-4 text-center order-1 order-md-2 mb-4 mb-md-0">
-            <img
-              data-sal="slide-up"
-              class="img-fluid w-75 logo-sekolah"
-              :src="logoSekolah"
-              alt="Logo Sekolah"
-              loading="lazy"
-            />
-          </div>
+        <h5 data-sal="slide-up" class="sub-title text-uppercase mt-4">
+          Arti Logo Sekolah
+        </h5>
 
-        </div>
+        <p data-sal="slide-up" class="profil-text">
+          {{ profil.artiLogo }}
+        </p>
       </div>
-    </section>
+
+      <!-- IMAGE -->
+      <div class="col-md-4 text-center order-1 order-md-2 mb-4 mb-md-0">
+        <img
+          data-sal="slide-up"
+          class="img-fluid w-75 logo-sekolah"
+          :src="logoSekolah"
+          alt="Logo Sekolah"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <VisiMisi />
     <FasilitasCarousel />

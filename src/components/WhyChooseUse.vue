@@ -1,6 +1,29 @@
 <script setup>
 import { onMounted, nextTick } from 'vue'
 import sal from 'sal.js'
+const reasons = [
+  {
+    icon: "bi-award",
+    title: "akreditasi a",
+    description: "terakreditasi nasional dengan standar pendidikan tinggi",
+  },
+  {
+    icon: "bi-buildings",
+    title: "fasilitas lengkap",
+    list: [
+      { icon: "bi-pc-display", text: "laboratorium komputer" },
+      { icon: "bi-vector-pen", text: "studio desain" },
+      { icon: "bi-book", text: "perpustakaan besar" },
+    ],
+  },
+  {
+    icon: "bi-people",
+    title: "alumni sukses",
+    description: "90% lulusan diterima di perguruan tinggi ternama",
+  },
+]
+
+
 
 onMounted(async () => {
   await nextTick()
@@ -11,45 +34,48 @@ onMounted(async () => {
 </script>
 
 <template>
+  <section class="py-5 why-section text-capitalize text-center">
+    <div class="container">
+      <h2 class="mb-5 text-uppercase section-title-why">
+        mengapa pilih kami?
+      </h2>
 
-  <section class="py-5 bg-dark text-capitalize text-white text-center">
-        <div class="container">
-          <h2 class="text-center mb-3 text-uppercase">mengapa pilih kami?</h2>
-          <div class="row">
+      <div class="row">
+        <div
+          v-for="(item, index) in reasons"
+          :key="index"
+          class="col-md-4 mb-4"
+          data-sal="fade-up"
+          :data-sal-delay="index * 200"
+          data-sal-duration="1000"
+        >
+          <!-- ICON -->
+          <i :class="['bi', item.icon, 'reason-icon']"></i>
 
-            <div data-sal="slide-up" data-sal-duration="900" class="col-md-4">
-                <i class="bi bi-award fs-1 fst-normal"><h5>akreditas a</h5></i>
-              <p>terakreditasi nasional dengan standar pendidikan tinggi</p>
-            </div>
+          <!-- TITLE -->
+          <h5 class="fw-bold mb-3 reason-title">
+            {{ item.title }}
+          </h5>
 
-            <div data-sal="slide-up" data-sal-duration="900" class="col-md-4">
-                <i class="bi bi-buildings fs-1 fst-normal"><h5>fasilitas lengkap</h5></i>       
-              <ul class="list-unstyled">
-                <li class="mb-3">
-                  <i class="bi bi-pc-display fs-5"></i>
-                  laboratorium komputer
-                </li>
+          <!-- DESCRIPTION -->
+          <p v-if="item.description" class="reason-text">
+            {{ item.description }}
+          </p>
 
-                <li class="mb-3">
-                  <i class="bi bi-vector-pen fs-5"></i>
-                  studio desain
-                </li>
+          <!-- LIST -->
+          <ul v-if="item.list" class="list-unstyled reason-text">
+            <li
+              v-for="(listItem, i) in item.list"
+              :key="i"
+              class="mb-2"
+            >
+              <i :class="['bi', listItem.icon, 'me-2 list-icon']"></i>
+              {{ listItem.text }}
+            </li>
+          </ul>
 
-                <li class="mb-3">
-                  <i class="bi bi-book"></i>
-                  perpustakaan besar
-                </li>
-
-              </ul>
-            </div>
-
-            <div data-sal="slide-up" data-sal-duration="900" class="col-md-4">
-              <i class="bi bi-people bi-people-alumni fs-1 fst-normal">
-                <h5>alumni sukses</h5></i>
-              <p>90% lulusan diterima di perguruan tinggi ternama</p>
-            </div>
-
-          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 </template>
